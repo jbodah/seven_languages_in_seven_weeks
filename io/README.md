@@ -1,6 +1,8 @@
 Io
 ===
 
+Reference: http://iolanguage.org/scm/io/docs/reference/
+
 ## Summary
 
 Io is a lightweight prototype language with influence from Smalltalk. It is simple, powerful, and elegant. It's everything I like about Javascript mixed with Smalltalk's message passing. I think it would be really nice for building tools and general scripting
@@ -13,7 +15,11 @@ Io is a lightweight prototype language with influence from Smalltalk. It is simp
 * Methods are `Block`s
 * Collections: `List`, `Map`
 * Has `nil` object
-* Has singleton objects (cloning retursn singleton value)
+* Has singleton objects (cloning returns singleton value)
+* Three assignment operatrs `= := ::=`
+  * `::=` creates a slot, a setter (`setXYZ`), and assigns slot
+  * `:=` creates and assigns slot
+  * `=` assigns slot
 
 * Conventions
   * Types start with uppercase
