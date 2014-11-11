@@ -11,6 +11,7 @@ Io is a lightweight prototype language with influence from Smalltalk. It is simp
 
 * Prototype language (i.e. Objects have a prototype chain which they delegate missing messages to)
 * Has message passing
+  * `sender`, `target`, `arguments`
 * Objects have "slots"
 * Methods are `Block`s
 * Collections: `List`, `Map`
@@ -24,7 +25,7 @@ Io is a lightweight prototype language with influence from Smalltalk. It is simp
 * Conventions
   * Types start with uppercase
   * The global object space is `Lobby`
-  * Commas between arguments are mandatory (TODO: not sure what not using commas means yet)
+  * Commas between arguments are mandatory (not using commas will pipe/chain the next message)
   * can use `_` in REPL to get last evaluated
   * Boolean operators are `and or` which work like traditional `|| &&`
   * `nil` evaluates to `false` and `0` evaluates to `true`
@@ -72,4 +73,23 @@ hash size
 // Singletons
 Highlander := Object clone
 Highlander clone := Highlander // := syntax is optional, could use = because clone is already a defined slot
+
+// Operators
+OperatorTable
+OperatorTable addOperator("xor", 11)
+true xor := method(bool, if(bool, false, true))
+false xor := method(bool, if(bool, true, false))
+
+// Messages
+call sender
+call target
+call message arguments
+call message name
+
+// Control
+if(expression, trueCondition, falseCondition)
+if(express) then() else()
+for(i, initial, until, [iter], do)
+loop(foreverDo)
+while(expression, do; iter)
 ```
